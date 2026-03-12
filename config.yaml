@@ -1,11 +1,13 @@
 baseURL: https://sci-coder.github.io/shshaw_blog/
 languageCode: en-us
+defaultContentLanguage: en
 title: My Personal Blog
 theme: PaperMod
 
 # Disable RSS to fix the error
 disableKinds:
   - RSS
+  - sitemap
 
 params:
   # Site description
