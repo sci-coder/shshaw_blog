@@ -51,10 +51,21 @@ menu:
       name: About
       url: /about/
       weight: 20
+    - identifier: quarto
+      name: Quarto Projects
+      url: /quarto/
+      weight: 25
     - identifier: search
       name: Search
       url: /search/
       weight: 30
+    # Example: External Quarto site link
+    # - identifier: external-quarto
+    #   name: "📊 Data Science"
+    #   url: "https://sci-coder.github.io/quarto-site/"
+    #   weight: 40
+    #   params:
+    #     external: true
 
 # Enable search (without RSS)
 outputs:
