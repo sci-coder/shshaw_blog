@@ -1,0 +1,67 @@
+# Congo Theme Configuration
+
+# Appearance
+colorScheme: "congo"  # Options: congo, avocado, cherry, fire, ocean, sapphire, slate
+defaultAppearance: "light"  # Options: light, dark
+autoSwitchAppearance: true
+
+# Homepage layout
+homepage:
+  layout: "profile"  # Options: profile, hero, custom, card, background
+  homepageImage: ""  # Image for homepage
+  showRecent: true
+  recentLimit: 5
+
+# Article settings
+article:
+  showDate: true
+  showDateUpdated: false
+  showAuthor: true
+  showBreadcrumbs: true
+  showDraftLabel: true
+  showEdit: false
+  showHeadingAnchors: true
+  showPagination: true
+  invertPagination: false
+  showReadingTime: true
+  showTableOfContents: true
+  showTaxonomies: true
+  showWordCount: false
+  showComments: false
+
+# List pages
+list:
+  showBreadcrumbs: true
+  showSummary: true
+  showTableOfContents: false
+  showCardViewScreenWidth: false
+  groupByYear: true
+
+# Site search
+enableSearch: true
+
+# Header configuration
+header:
+  layout: "hamburger"  # Options: basic, hamburger, hybrid, custom
+  showTitle: true
+  logo: ""  # Path to logo image
+
+# Footer configuration
+footer:
+  showCopyright: true
+  showThemeAttribution: true
+  showAppearanceSwitcher: true
+  showScrollToTop: true
+
+# Social links (update with your links)
+links:
+  github: "https://github.com/sci-coder"
+  twitter: "https://twitter.com/YOUR-TWITTER"
+  linkedin: "https://linkedin.com/in/YOUR-LINKEDIN"
+  email: "mailto:your-email@example.com"
+
+# Author details
+author:
+  name: "Your Name"
+  bio: "Physics, Computation, AI, Evolution and Simulation enthusiast"
+  image: ""  # Author image path

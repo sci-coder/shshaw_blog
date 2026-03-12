@@ -2,7 +2,7 @@ baseURL: https://sci-coder.github.io/shshaw_blog/
 languageCode: en-us
 defaultContentLanguage: en
 title: Hashed Science
-theme: PaperMod
+theme: congo  # Use Congo for production (requires Hugo 0.115+)
 
 # Disable RSS to fix the error
 disableKinds:
@@ -11,7 +11,7 @@ disableKinds:
 
 params:
   # Site description
-  description: "Welcome to my personal blog"
+  description: "Welcome to Hashed Science - Blogs about Physics, Computation, AI, Evolution and Simulation"
   author: "Your Name"
 
   # Show reading time
@@ -24,7 +24,7 @@ params:
   # Home page configuration
   profileMode:
     enabled: true
-    title: "Blogs about Physics, Computation, AI , Evolution and Simulation"
+    title: "Blogs about Physics, Computation, AI, Evolution and Simulation"
     subtitle: "Welcome to my personal blog where I share my thoughts and ideas"
     imageUrl: "" # You can add a profile image URL later
     imageTitle: "Profile Picture"
