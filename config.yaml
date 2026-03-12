@@ -1,0 +1,63 @@
+baseURL: https://YOUR-GITHUB-USERNAME.github.io/
+languageCode: en-us
+title: My Personal Blog
+theme: PaperMod
+
+# Disable RSS to fix the error
+disableKinds:
+  - RSS
+
+params:
+  # Site description
+  description: "Welcome to my personal blog"
+  author: "Your Name"
+
+  # Show reading time
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+  # Home page configuration
+  profileMode:
+    enabled: true
+    title: "Hello World! 👋"
+    subtitle: "Welcome to my personal blog where I share my thoughts and experiences"
+    imageUrl: "" # You can add a profile image URL later
+    imageTitle: "Profile Picture"
+    buttons:
+      - name: Posts
+        url: posts
+      - name: GitHub
+        url: "https://github.com/YOUR-GITHUB-USERNAME"
+
+  # Social Icons (update with your links)
+  socialIcons:
+    - name: github
+      url: "https://github.com/YOUR-GITHUB-USERNAME"
+    - name: twitter
+      url: "https://twitter.com/YOUR-TWITTER-USERNAME"
+    - name: linkedin
+      url: "https://linkedin.com/in/YOUR-LINKEDIN-USERNAME"
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 30
+
+# Enable search (without RSS)
+outputs:
+  home:
+    - HTML
+    - JSON
