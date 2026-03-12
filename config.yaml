@@ -2,7 +2,7 @@ baseURL: https://sci-coder.github.io/shshaw_blog/
 languageCode: en-us
 defaultContentLanguage: en
 title: Hashed Science
-theme: congo  # Use Congo for production (requires Hugo 0.115+)
+theme: PaperMod  # Stable theme that works with all Hugo versions
 
 # Disable RSS to fix the error
 disableKinds:
