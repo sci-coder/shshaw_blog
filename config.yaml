@@ -57,6 +57,10 @@ menu:
       name: Quarto Projects
       url: /quarto/
       weight: 25
+    - identifier: bimbo-ball
+      name: Bimbo Ball
+      url: /bimbo-ball/
+      weight: 27
     - identifier: search
       name: Search
       url: /search/
@@ -74,3 +78,9 @@ outputs:
   home:
     - HTML
     - JSON
+
+# Allow raw HTML in markdown files (needed for animations)
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
