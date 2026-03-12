@@ -53,10 +53,6 @@ menu:
       name: About
       url: /about/
       weight: 20
-    - identifier: quarto
-      name: Quarto Projects
-      url: /quarto/
-      weight: 25
     - identifier: bimbo-ball
       name: Bimbo Ball
       url: /bimbo-ball/
