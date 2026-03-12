@@ -1,7 +1,7 @@
 baseURL: https://sci-coder.github.io/shshaw_blog/
 languageCode: en-us
 defaultContentLanguage: en
-title: My Personal Blog
+title: Hashed Science
 theme: PaperMod
 
 # Disable RSS to fix the error
@@ -24,8 +24,8 @@ params:
   # Home page configuration
   profileMode:
     enabled: true
-    title: "Hello World! 👋"
-    subtitle: "Welcome to my personal blog where I share my thoughts and experiences"
+    title: "Blogs about Physics, Computation, AI , Evolution and Simulation"
+    subtitle: "Welcome to my personal blog where I share my thoughts and ideas"
     imageUrl: "" # You can add a profile image URL later
     imageTitle: "Profile Picture"
     buttons:
