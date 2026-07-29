@@ -6,7 +6,7 @@ summary: "Colourised electron-microscope images — black-and-white micrographs 
 aliases:
   - /electron-microscopy-art/
 ---
-I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version.
+I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version. For the ant, I also compare my hand-colourisation with an AI colourisation by **Google Gemini**.
 
 These images are not mine. They are the property of Aalborg University. The images have been coloured here and published by permission of Aalborg University. The original image gallery at Aalborg is [here](http://www.nano.aau.dk/nanolab/equipment/electron-microscope-image-gallery/).
 
@@ -17,16 +17,22 @@ These images are not mine. They are the property of Aalborg University. The imag
   .em-cols figure { margin: 0; }
   .em-cols img { width: 100%; height: auto; border-radius: 8px; display: block; }
   .em-cols figcaption { text-align: center; font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem; }
+  .em-quad { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .em-quad figure { margin: 0; }
+  .em-quad img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  .em-quad figcaption { text-align: center; font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem; }
   @media (max-width: 600px) { .em-cols { grid-template-columns: 1fr; } }
 </style>
 
 <div class="em-pairs">
 
   <figure class="em-pair">
-    <figcaption class="subject">Ant</figcaption>
-    <div class="em-cols">
-      <figure><img src="ant1.jpg" alt="Ant — original"><figcaption>Original</figcaption></figure>
-      <figure><img src="ant.jpg" alt="Ant — colourised"><figcaption>Colourised</figcaption></figure>
+    <figcaption class="subject">Ant — mine vs. Gemini</figcaption>
+    <div class="em-quad">
+      <figure><img src="ant1.jpg" alt="Ant — original micrograph"><figcaption>Original</figcaption></figure>
+      <figure><img src="ant.jpg" alt="Ant — my colourisation"><figcaption>My colourisation</figcaption></figure>
+      <figure><img src="ant-gemini-1.jpg" alt="Ant — colourised by Google Gemini"><figcaption>Gemini</figcaption></figure>
+      <figure><img src="ant-gemini-2.jpg" alt="Ant — colourised by Google Gemini (variant)"><figcaption>Gemini (variant)</figcaption></figure>
     </div>
   </figure>
 
