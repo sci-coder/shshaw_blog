@@ -3,7 +3,7 @@ title: "About"
 date: 2026-07-29
 ---
 
-## Hi, I'm Syed Hashim Shah
+## Hi, I'm Syed Hashim Shah (Hashim)
 
 I'm a **Quantitative ML & Generative AI researcher** working on problems in finance and risk management, based in **Tokyo, Japan**. Day to day I build generative and probabilistic models for markets — synthetic scenario generation, time-series modelling, anomaly detection, and Bayesian methods — and turn them into reproducible, production Python. I was lead author of [JPX Working Paper Vol. 48](https://www.jpx.co.jp/corporate/research-study/working-paper/JPXWP_Vol48.pdf), *Hypothetical Market Data Scenario Generation Using Generative AI*, for the Japan Exchange Group.
 
