@@ -35,6 +35,8 @@ These images are not mine. They are the property of Aalborg University. The imag
     </div>
   </figure>
 
+So it seems like vision models are pretty good at segmentation of Electron microscope images now.
+
   <figure class="em-pair">
     <figcaption class="subject">Electrical Contacts</figcaption>
     <div class="em-cols">
