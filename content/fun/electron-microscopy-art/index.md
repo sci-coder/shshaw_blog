@@ -6,18 +6,44 @@ summary: "Colourised electron-microscope images — black-and-white micrographs 
 aliases:
   - /electron-microscopy-art/
 ---
-I am photoshop enthusiast. Recently, I have been adding colours to black and white images of Electron Microscope to give them an attractive look. I am working further on my skill to improve colouring to another level.
+I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version.
 
-These images are not mine. They are the property of Aalborg University. The images have been coloured here and published by permission of Aalborg University. Original image gallery at Aalborg is [here](http://www.nano.aau.dk/nanolab/equipment/electron-microscope-image-gallery/)
+These images are not mine. They are the property of Aalborg University. The images have been coloured here and published by permission of Aalborg University. The original image gallery at Aalborg is [here](http://www.nano.aau.dk/nanolab/equipment/electron-microscope-image-gallery/).
 
-![Ant](ant.jpg "Ant")
+<style>
+  .em-pairs { display: flex; flex-direction: column; gap: 2.5rem; margin-top: 1.5rem; }
+  .em-pair figcaption.subject { font-weight: 600; margin-bottom: 0.6rem; }
+  .em-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .em-cols figure { margin: 0; }
+  .em-cols img { width: 100%; height: auto; border-radius: 8px; display: block; }
+  .em-cols figcaption { text-align: center; font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem; }
+  @media (max-width: 600px) { .em-cols { grid-template-columns: 1fr; } }
+</style>
 
-![Ant1](ant1.jpg "Ant1")
+<div class="em-pairs">
 
-![Contacts 2](contacts-2.jpg "Contacts 2")
+  <figure class="em-pair">
+    <figcaption class="subject">Ant</figcaption>
+    <div class="em-cols">
+      <figure><img src="ant1.jpg" alt="Ant — original"><figcaption>Original</figcaption></figure>
+      <figure><img src="ant.jpg" alt="Ant — colourised"><figcaption>Colourised</figcaption></figure>
+    </div>
+  </figure>
 
-![Contacts](contacts.jpg "Contacts")
+  <figure class="em-pair">
+    <figcaption class="subject">Electrical Contacts</figcaption>
+    <div class="em-cols">
+      <figure><img src="contacts.jpg" alt="Contacts — original"><figcaption>Original</figcaption></figure>
+      <figure><img src="contacts-2.jpg" alt="Contacts — colourised"><figcaption>Colourised</figcaption></figure>
+    </div>
+  </figure>
 
-![84455\_tungstenelectrodelasercut](84455_tungstenelectrodelasercut.jpg "84455_tungstenelectrodelasercut")
+  <figure class="em-pair">
+    <figcaption class="subject">Laser-Cut Tungsten Electrode</figcaption>
+    <div class="em-cols">
+      <figure><img src="84455_tungstenelectrodelasercut.jpg" alt="Tungsten electrode — original"><figcaption>Original</figcaption></figure>
+      <figure><img src="tungstenelectrodelasercut.jpg" alt="Tungsten electrode — colourised"><figcaption>Colourised</figcaption></figure>
+    </div>
+  </figure>
 
-![tungstenelectrodelasercut](tungstenelectrodelasercut.jpg "tungstenelectrodelasercut")
+</div>
