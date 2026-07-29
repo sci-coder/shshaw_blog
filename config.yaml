@@ -12,7 +12,7 @@ disableKinds:
 params:
   # Site description
   description: "Welcome to Hashed Science - Blogs about Physics, Computation, AI, Evolution and Simulation"
-  author: "Your Name"
+  author: "Syed Hashim Shah"
 
   # Show reading time
   ShowReadingTime: true
@@ -38,10 +38,10 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/sci-coder"
-    - name: twitter
-      url: "https://twitter.com/YOUR-TWITTER-USERNAME"
     - name: linkedin
-      url: "https://linkedin.com/in/YOUR-LINKEDIN-USERNAME"
+      url: "https://www.linkedin.com/in/syed-hashim-shah/"
+    - name: email
+      url: "mailto:syed.hashim.shahh@gmail.com"
 
 menu:
   main:
@@ -57,9 +57,9 @@ menu:
       name: CV
       url: /cv/
       weight: 25
-    - identifier: bimbo-ball
-      name: Bimbo Ball
-      url: /bimbo-ball/
+    - identifier: fun
+      name: Fun
+      url: /fun/
       weight: 27
     - identifier: search
       name: Search

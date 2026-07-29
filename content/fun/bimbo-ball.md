@@ -2,6 +2,8 @@
 title: "Bimbo Ball - Bouncing Ball Animation"
 date: 2026-03-12T16:00:00+09:00
 draft: false
+aliases:
+  - /bimbo-ball/
 ---
 
 <style>
