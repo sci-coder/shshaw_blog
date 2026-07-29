@@ -32,7 +32,6 @@ These images are not mine. They are the property of Aalborg University. The imag
       <figure><img src="ant1.jpg" alt="Ant — original micrograph"><figcaption>Original</figcaption></figure>
       <figure><img src="ant.jpg" alt="Ant — my colourisation"><figcaption>My colourisation</figcaption></figure>
       <figure><img src="ant-gemini-1.jpg" alt="Ant — colourised by Google Gemini"><figcaption>Gemini</figcaption></figure>
-      <figure><img src="ant-gemini-2.jpg" alt="Ant — colourised by Google Gemini (variant)"><figcaption>Gemini (variant)</figcaption></figure>
     </div>
   </figure>
 
