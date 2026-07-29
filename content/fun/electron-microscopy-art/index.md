@@ -6,7 +6,7 @@ summary: "Colourised electron-microscope images — black-and-white micrographs 
 aliases:
   - /electron-microscopy-art/
 ---
-I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version. For the ant, I also compare my hand-colourisation with an AI colourisation by **Google Gemini**.
+I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version. For each subject, I also compare my hand-colourisation with an AI colourisation by **Google Gemini**.
 
 These images are not mine. They are the property of Aalborg University. The images have been coloured here and published by permission of Aalborg University. The original image gallery at Aalborg is [here](http://www.nano.aau.dk/nanolab/equipment/electron-microscope-image-gallery/).
 
@@ -35,22 +35,24 @@ These images are not mine. They are the property of Aalborg University. The imag
     </div>
   </figure>
 
-So it seems like vision models are pretty good at segmentation of Electron microscope images now.
-
   <figure class="em-pair">
-    <figcaption class="subject">Electrical Contacts</figcaption>
-    <div class="em-cols">
-      <figure><img src="contacts.jpg" alt="Contacts — original"><figcaption>Original</figcaption></figure>
-      <figure><img src="contacts-2.jpg" alt="Contacts — colourised"><figcaption>Colourised</figcaption></figure>
+    <figcaption class="subject">Electrical Contacts — mine vs. Gemini</figcaption>
+    <div class="em-quad">
+      <figure><img src="contacts.jpg" alt="Contacts — original micrograph"><figcaption>Original</figcaption></figure>
+      <figure><img src="contacts-2.jpg" alt="Contacts — my colourisation"><figcaption>My colourisation</figcaption></figure>
+      <figure><img src="contacts-gemini-1.jpg" alt="Contacts — colourised by Google Gemini"><figcaption>Gemini</figcaption></figure>
     </div>
   </figure>
 
   <figure class="em-pair">
-    <figcaption class="subject">Laser-Cut Tungsten Electrode</figcaption>
-    <div class="em-cols">
-      <figure><img src="84455_tungstenelectrodelasercut.jpg" alt="Tungsten electrode — original"><figcaption>Original</figcaption></figure>
-      <figure><img src="tungstenelectrodelasercut.jpg" alt="Tungsten electrode — colourised"><figcaption>Colourised</figcaption></figure>
+    <figcaption class="subject">Laser-Cut Tungsten Electrode — mine vs. Gemini</figcaption>
+    <div class="em-quad">
+      <figure><img src="84455_tungstenelectrodelasercut.jpg" alt="Tungsten electrode — original micrograph"><figcaption>Original</figcaption></figure>
+      <figure><img src="tungstenelectrodelasercut.jpg" alt="Tungsten electrode — my colourisation"><figcaption>My colourisation</figcaption></figure>
+      <figure><img src="electrode-gemini-1.jpg" alt="Tungsten electrode — colourised by Google Gemini"><figcaption>Gemini</figcaption></figure>
     </div>
   </figure>
 
 </div>
+
+So it seems like vision models are pretty good at segmentation of Electron microscope images now.
