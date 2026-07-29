@@ -1,6 +1,7 @@
 ---
-title: "CV"
+title: "CV (Read Online or Download)"
 date: 2026-07-29
+summary: "My full curriculum vitae — read it online, or download as PDF or Markdown."
 hidemeta: true
 ShowReadingTime: false
 ShowShareButtons: false
