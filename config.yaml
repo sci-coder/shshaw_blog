@@ -53,10 +53,6 @@ menu:
       name: About
       url: /about/
       weight: 20
-    - identifier: cv
-      name: CV
-      url: /cv/
-      weight: 25
     - identifier: fun
       name: Fun
       url: /fun/

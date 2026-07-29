@@ -4,6 +4,8 @@ date: 2026-07-29
 hidemeta: true
 ShowReadingTime: false
 ShowShareButtons: false
+aliases:
+  - /cv/
 ---
 
 My curriculum vitae. You can [**download the PDF**](/shshaw_blog/cv/Syed_Hashim_Shah_CV.pdf) or read it inline below.
