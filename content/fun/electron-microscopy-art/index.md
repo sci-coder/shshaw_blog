@@ -6,7 +6,7 @@ summary: "Colourised electron-microscope images — black-and-white micrographs 
 aliases:
   - /electron-microscopy-art/
 ---
-I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version. For each subject, I also compare my hand-colourisation with an AI colourisation by **Google Gemini**.
+I am a Photoshop enthusiast. I have been adding colours to black-and-white electron-microscope images to give them an attractive look. Each pair below shows the **original micrograph** alongside my **colourised** version. Recently, I also tried using AI to do the colourising, so for each subject you can compare my hand-colourisation with an AI colourisation by **Google Gemini** — hand-coloured versus AI-coloured, side by side.
 
 These images are not mine. They are the property of Aalborg University. The images have been coloured here and published by permission of Aalborg University. The original image gallery at Aalborg is [here](http://www.nano.aau.dk/nanolab/equipment/electron-microscope-image-gallery/).
 
