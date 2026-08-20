@@ -14,6 +14,9 @@ params:
   description: "Welcome to Hashed Science - Blogs about Physics, Computation, AI, Evolution and Simulation"
   author: "Syed Hashim Shah"
 
+  # Default to dark mode (visitors can still toggle; choice is remembered)
+  defaultTheme: dark
+
   # Show reading time
   ShowReadingTime: true
   ShowShareButtons: true
