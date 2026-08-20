@@ -12,6 +12,7 @@ cover:
   alt: "A bead settling on a circular wire under a force field"
   caption: "The objective pulls; the wire pushes back; equilibrium is the Lagrange condition."
   relative: true
+  hiddenInSingle: true   # same GIF appears inline below; keep it only as the list thumbnail
 ---
 
 Every calculus course teaches the recipe. To solve
