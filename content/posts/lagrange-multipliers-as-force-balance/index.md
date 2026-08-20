@@ -15,6 +15,7 @@ cover:
   relative: true
 ---
 
+
 Every calculus course teaches the recipe. To solve
 
 $$\min_{x,y}\; f(x,y)\quad\text{subject to}\quad g(x,y)=c,$$
@@ -111,25 +112,34 @@ zero is precisely the balance above. So $\lambda$ is the **weight the constraint
 carries** in the combined potential: a larger $|\lambda|$ means a stiffer push is
 required to hold the bead in place.
 
-## One honest caveat: bumpy landscapes
+## Bumpy landscapes: many balance points
 
-If $f$ is **convex**, the balanced point is unique and it is the answer. Real
-objectives are bumpy, and then the balance condition $\nabla f=\lambda\nabla g$
-holds at **many** points on the wire — every valley bottom (a *stable* rest
-point) *and* every ridge top (an *unstable* one), each with its own $\lambda$.
-Damped sliding only finds the bottom of the basin it happens to start in.
+For **convex** $f$ the balanced point is unique. When $f$ is bumpy the same
+condition $\nabla f=\lambda\nabla g$ simply holds at **several** points on the
+wire — every valley bottom (a *stable* rest point) *and* every ridge top (an
+*unstable* one), each with its own $\lambda$. Nothing about the force picture
+breaks; it just has more than one solution. And the mechanics makes visible
+something you already know about gradient methods: **a force/gradient flow settles
+into whichever local minimum it starts nearest.** That is not a flaw here any more
+than it is for ordinary gradient descent — it is simply how local methods behave.
 
 Below, eight beads are released on a landscape of several wells. Green dots mark
 stable minima, red crosses mark unstable maxima — **all** of them satisfy
-$\nabla f=\lambda\nabla g$. The beads split by basin, and several settle into
-shallower minima, never reaching the deepest valley (the ringed global optimum).
+$\nabla f=\lambda\nabla g$. The beads split by basin; some settle in shallower
+minima rather than the deepest valley (the ringed global optimum), exactly as you
+would expect from local descent. The forces are drawn just as before: each bead
+carries its **net along-wire force** in orange (it shrinks to zero as the bead
+settles), and the white-ringed bead — the one heading for the deepest valley —
+also shows its full pull $-\nabla f$ in red and the wire's reaction
+$\lambda\nabla g$ in blue, which come into balance when it stops.
 
-![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Force balance guarantees a balanced point, not the best one. Maxima (red crosses) balance forces too — they are simply unstable, so any nudge sends the bead downhill.")
+![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too — they are just unstable.")
 
-This is the honest scope of the picture. Force balance is **stationarity**, not
-optimality; it is the *damping* that selects a minimum, and only a **local** one.
-Finding the *global* constrained optimum needs more than local sliding —
-multiple starts (as here), annealing, or a genuinely global method.
+The one distinction worth keeping straight is that force balance is
+**stationarity**, not optimality: maxima balance forces as well, they are merely
+unstable. Selecting the *global* constrained optimum is then the usual separate
+job — multiple starts (as here), annealing, or a global method — precisely as it
+is for unconstrained gradient descent.
 
 ## The whole idea, on one page
 
