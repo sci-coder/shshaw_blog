@@ -112,6 +112,49 @@ zero is precisely the balance above. So $\lambda$ is the **weight the constraint
 carries** in the combined potential: a larger $|\lambda|$ means a stiffer push is
 required to hold the bead in place.
 
+## Soft constraints: a spring instead of a wire
+
+A rigid wire is an idealisation. It is often more natural — and it is what we
+actually do numerically — to make the constraint **soft**: replace the wire with
+a **spring** that pulls the bead toward the constraint surface, and charge an
+*energy penalty* for drifting off it. The total energy becomes
+
+$$E_\mu(x,y)=\underbrace{f(x,y)}_{\text{go downhill}}\;+\;\underbrace{\tfrac{\mu}{2}\big(g(x,y)-c\big)^2}_{\text{cost of leaving } g=c},$$
+
+two energies in direct competition: $f$ pulls the bead toward its own minimum,
+while the spring term pulls it back onto $g=c$. The stiffness $\mu$ sets how
+expensive a violation is. The bead now roams the whole plane and settles at the
+minimum of $E_\mu$, where the two forces cancel:
+
+$$\nabla f + \mu\,(g-c)\,\nabla g = 0
+\qquad\Longleftrightarrow\qquad
+\nabla f = \underbrace{-\mu\,(g-c)}_{=\;\lambda}\,\nabla g.$$
+
+Two things fall straight out:
+
+- **The multiplier is the spring's tension.** At the balance point the spring is
+  stretched by $g-c$, and the restoring force it delivers, $-\mu(g-c)\nabla g$,
+  plays exactly the role the wire's reaction $\lambda\nabla g$ did. So
+  $\lambda=-\mu(g-c)$ — the multiplier is literally *how hard the spring pulls*.
+- **A soft constraint is slightly violated.** At finite stiffness the bead rests a
+  little *off* the constraint ($g-c\neq0$); that is the price of softness. As you
+  stiffen the spring, $\mu\to\infty$, the violation $g-c\to0$ (the bead returns to
+  the wire) while the product $\mu(g-c)$ stays finite and tends to $-\lambda^*$.
+  **The rigid wire is nothing but the infinitely-stiff-spring limit.**
+
+Below we crank up the stiffness $\mu$. The bead starts at the *unconstrained*
+minimum of $f$ (the target $a$, spring slack, constraint badly violated) and is
+reeled onto the constraint as the spring tightens; the effective multiplier
+$\lambda=-\mu(g-c)$ grows to $\lambda^*\approx-1.24$ while the violation shrinks
+to zero.
+
+![Stiffening a spring reels the bead from the unconstrained optimum onto the constraint](spring-penalty.gif "Red downhill pull and blue spring force are equal and opposite at every stiffness — each frame is already a balance. As μ→∞ the violation g−c→0 and the spring tension −μ(g−c) becomes the multiplier λ.")
+
+This is exactly the **penalty method** of constrained optimisation, and the seed
+of the **augmented Lagrangian**: trade a hard constraint for a stiff quadratic
+penalty, and recover the multiplier as the penalty's tension in the stiff-spring
+limit. Hard wire and soft spring are two views of the same balance.
+
 ## Bumpy landscapes: many balance points
 
 For **convex** $f$ the balanced point is unique. When $f$ is bumpy the same
