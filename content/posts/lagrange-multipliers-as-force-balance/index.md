@@ -4,7 +4,7 @@ date: 2026-08-20T10:00:00+09:00
 draft: false
 tags: ["optimization", "physics", "calculus", "intuition", "mechanics"]
 categories: ["Primers"]
-summary: "A short, picture-first primer: the method of Lagrange multipliers is not algebraic bookkeeping but a bead sliding on a wire until the objective's pull is absorbed by the constraint's reaction force."
+summary: "A short, picture-first primer that reads Lagrange multipliers as a bead sliding on a wire until the objective's pull is absorbed by the constraint's reaction force."
 math: true
 ShowToc: false
 cover:
@@ -22,11 +22,11 @@ you introduce a number $\lambda$, write down
 
 $$\nabla f=\lambda\,\nabla g,\qquad g=c,$$
 
-and solve. It works, and most of us learned to turn the crank without ever being
-told why the two gradients should end up parallel. The cleanest answer is not
-algebraic at all; it is mechanical. The recipe is a statement that forces are in
-equilibrium. Once you see the picture, the formula stops being something to
-memorise and becomes something you could have guessed.
+and solve. It works, and most of us turned the crank long before anyone explained
+why the two gradients should end up parallel. The cleanest answer is mechanical
+rather than algebraic: the recipe is a statement that forces are in equilibrium.
+Once you see the picture, the formula stops being something to memorise and
+becomes something you could have guessed.
 
 Read the objective $f$ as a **potential energy**. A potential exerts a force
 equal to minus its gradient,
@@ -44,8 +44,8 @@ piece is answered by the wire itself: a rigid wire responds to any sideways push
 with an equal and opposite **reaction force**, and that reaction can only point
 perpendicular to the wire, along $\nabla g$. Call it $\mathbf N=\lambda\,\nabla g$,
 where the single number $\lambda$ says how hard the wire pushes and its sign says
-which way. The along piece is the only force free to move the bead, so as long as
-it is non-zero the bead keeps sliding. The bead therefore comes to rest exactly
+which way. The along piece is the only force free to move the bead, so while any
+along-wire force remains, the bead keeps sliding. The bead comes to rest exactly
 when the along-wire force vanishes, when the entire pull is perpendicular to the
 wire and hence parallel to $\nabla g$:
 
@@ -53,7 +53,7 @@ $$\underbrace{-\nabla f}_{\text{pull}}\;+\;\underbrace{\lambda\,\nabla g}_{\text
 \qquad\Longleftrightarrow\qquad \boxed{\;\nabla f=\lambda\,\nabla g\;}.$$
 
 That is the Lagrange condition, and we reached it by balancing forces rather than
-by algebra. The multiplier $\lambda$ was never bookkeeping; it is the strength of
+by algebra. The multiplier $\lambda$ measures something physical: the strength of
 the constraint's reaction force.
 
 A concrete case makes it tangible. Take an especially transparent objective, a
@@ -86,9 +86,8 @@ the wire's reaction, always perpendicular to the wire.
 ![A bead sliding on a circular wire until the along-wire force vanishes](bead-on-wire.gif "As the bead settles, the orange along-wire force dies away; the red pull becomes purely radial and is exactly cancelled by the blue reaction. The read-out λ converges to −1.24.")
 
 When the bead stops, red and blue are equal and opposite, and the on-screen
-$\lambda$ has arrived at the $\lambda^*\approx-1.24$ we computed. Nothing was
-minimised by formula; a bead simply found the spot where the wire can absorb the
-entire pull.
+$\lambda$ has arrived at the $\lambda^*\approx-1.24$ we computed. A bead found the
+spot where the wire can absorb the entire pull, purely by sliding.
 
 It is worth pausing on $\lambda$. Bundle the objective and the constraint into a
 single landscape, the *Lagrangian*
@@ -124,7 +123,7 @@ pulls. Second, a soft constraint is slightly violated: at finite stiffness the
 bead rests a little off the constraint, with $g-c\neq0$, which is the price of
 softness. As you stiffen the spring and let $\mu\to\infty$, the violation
 $g-c\to0$ while the product $\mu(g-c)$ stays finite and tends to $-\lambda^*$. The
-rigid wire is nothing but the infinitely stiff spring limit.
+rigid wire is simply the infinitely stiff spring limit.
 
 In the animation below we crank up the stiffness $\mu$. The bead starts at the
 unconstrained minimum of $f$ (the target $\mathbf a$, spring slack, constraint
@@ -145,11 +144,11 @@ holds at several points on the wire: every valley bottom, a stable rest point, a
 every ridge top, an unstable one, each with its own $\lambda$. (Even the convex
 bowl already has two balance points on the circle, a near minimum and a far
 maximum; what is unique for a convex objective is the minimum, not the balance.)
-Nothing about the force picture breaks; it simply has more than one solution. The
+The force picture still holds; it simply gains more than one solution. The
 mechanics also makes visible something you already know about gradient methods: a
 force or gradient flow settles into whichever local minimum's basin it starts in.
-That is no more a flaw here than it is for ordinary gradient descent; it is simply
-how local methods behave.
+This is simply how local methods behave, here and in ordinary gradient descent
+alike.
 
 In the animation, eight beads are released on a landscape of several wells. Green
 dots mark stable minima, red crosses mark unstable maxima, and all of them satisfy
@@ -164,7 +163,8 @@ come into balance when it stops.
 ![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too; they are just unstable.")
 
 The one distinction worth keeping straight is that force balance is stationarity,
-not optimality: maxima balance forces as well, they are merely unstable. Selecting
+a weaker property than optimality: maxima balance forces as well, and they are
+merely unstable. Selecting
 the global constrained optimum is then the usual separate job, whether by multiple
 starts as here, by annealing, or by a global method, precisely as it is for
 unconstrained gradient descent.
