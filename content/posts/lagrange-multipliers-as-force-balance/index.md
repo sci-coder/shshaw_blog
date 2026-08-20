@@ -84,11 +84,11 @@ part, the net force that actually moves the bead, and it shrinks to zero. The
 <span style="color:#1f9fd8;font-weight:bold">blue</span> arrow is $\lambda\nabla g$,
 the wire's reaction, always perpendicular to the wire.
 
-![A bead sliding on a circular wire until the along-wire force vanishes](bead-on-wire.gif "As the bead settles, the orange along-wire force dies away; the red pull becomes purely radial and is exactly cancelled by the blue reaction. The read-out λ converges to −1.24.")
-
 When the bead stops, red and blue are equal and opposite, and the on-screen
 $\lambda$ has arrived at the $\lambda^*\approx-1.24$ we computed. A bead found the
-spot where the wire can absorb the entire pull, purely by sliding.
+spot where the wire can absorb the entire pull, purely by sliding. We will watch
+this settle in a moment, set beside a second and equivalent picture of the same
+balance.
 
 It is worth pausing on $\lambda$. Bundle the objective and the constraint into a
 single landscape, the *Lagrangian*
@@ -126,13 +126,18 @@ softness. As you stiffen the spring and let $\mu\to\infty$, the violation
 $g-c\to0$ while the product $\mu(g-c)$ stays finite and tends to $-\lambda^*$. The
 rigid wire is simply the infinitely stiff spring limit.
 
-In the animation below we crank up the stiffness $\mu$. The bead starts at the
-unconstrained minimum of $f$ (the target $\mathbf a$, spring slack, constraint
-badly violated) and is reeled onto the constraint as the spring tightens; the
-effective multiplier $\lambda=-\mu(g-c)$ approaches $\lambda^*\approx-1.24$ while
-the violation shrinks to zero.
+In the right-hand panel of the figure below we crank up the stiffness $\mu$. The
+bead starts at the unconstrained minimum of $f$ (the target $\mathbf a$, spring
+slack, constraint badly violated) and is reeled onto the constraint as the spring
+tightens; the effective multiplier $\lambda=-\mu(g-c)$ approaches
+$\lambda^*\approx-1.24$ while the violation shrinks to zero. The left-hand panel is
+the rigid wire from before, settling under the same pull, so the two mechanisms
+can be watched together.
 
-![Stiffening a spring reels the bead from the unconstrained optimum onto the constraint](spring-penalty.gif "Red downhill pull and blue spring force are equal and opposite at every stiffness; each frame is already a balance. As μ→∞ the violation g−c→0 and the spring tension −μ(g−c) becomes the multiplier λ.")
+<figure style="text-align:center;margin:1.5em 0">
+<img src="wire-and-spring.gif" alt="Two views of the same balance: a bead on a rigid wire, and the same problem with the wire replaced by a stiffening spring" loading="lazy" style="max-width:100%;height:auto">
+<figcaption style="font-size:0.9em;opacity:0.75;margin-top:0.5em;text-align:left"><strong>Two views of the same balance.</strong> On the left, a bead on a rigid wire: the objective's pull (red) splits into an along-wire part (orange) that dies to zero and a normal reaction (blue) that the wire supplies, so the bead rests where ∇f = λ∇g. On the right, the wire is replaced by a stiffening spring: as the stiffness μ grows the bead is reeled onto the constraint, and the spring tension −μ(g−c) approaches the same multiplier λ.</figcaption>
+</figure>
 
 This is exactly the penalty method of constrained optimisation, and the seed of
 the augmented Lagrangian: trade a hard constraint for a stiff quadratic penalty,
@@ -161,7 +166,10 @@ white-ringed bead, the one heading for the deepest valley, also shows its full
 pull $-\nabla f$ in red and the wire's reaction $\lambda\nabla g$ in blue, which
 come into balance when it stops.
 
-![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too; they are just unstable.")
+<figure style="text-align:center;margin:1.5em 0">
+<img src="bumpy-swarm.gif" alt="Eight beads released on a bumpy landscape, settling into different basins" loading="lazy" style="max-width:100%;height:auto">
+<figcaption style="font-size:0.9em;opacity:0.75;margin-top:0.5em;text-align:left">Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too; they are just unstable.</figcaption>
+</figure>
 
 The one distinction worth keeping straight is that force balance is stationarity,
 a weaker property than optimality: maxima balance forces as well, and they are
