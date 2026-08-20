@@ -4,17 +4,15 @@ date: 2026-08-20T10:00:00+09:00
 draft: false
 tags: ["optimization", "physics", "calculus", "intuition", "mechanics"]
 categories: ["Primers"]
-summary: "A short, picture-first primer: the method of Lagrange multipliers isn't algebraic bookkeeping — it's a bead sliding on a wire until the objective's pull is absorbed by the constraint's reaction force."
+summary: "A short, picture-first primer: the method of Lagrange multipliers is not algebraic bookkeeping but a bead sliding on a wire until the objective's pull is absorbed by the constraint's reaction force."
 math: true
-ShowToc: true
-TocOpen: false
+ShowToc: false
 cover:
   image: "bead-on-wire.gif"
   alt: "A bead settling on a circular wire under a force field"
   caption: "The objective pulls; the wire pushes back; equilibrium is the Lagrange condition."
   relative: true
 ---
-
 
 Every calculus course teaches the recipe. To solve
 
@@ -25,12 +23,10 @@ you introduce a number $\lambda$, write down
 $$\nabla f=\lambda\,\nabla g,\qquad g=c,$$
 
 and solve. It works, and most of us learned to turn the crank without ever being
-told *why* the two gradients should end up parallel. The cleanest answer isn't
-algebraic at all. It's mechanical: **the recipe is a statement that forces are in
-equilibrium.** Once you see the picture, the formula stops being something to
+told why the two gradients should end up parallel. The cleanest answer is not
+algebraic at all; it is mechanical. The recipe is a statement that forces are in
+equilibrium. Once you see the picture, the formula stops being something to
 memorise and becomes something you could have guessed.
-
-## One idea: a bead threaded on a wire
 
 Read the objective $f$ as a **potential energy**. A potential exerts a force
 equal to minus its gradient,
@@ -38,164 +34,153 @@ equal to minus its gradient,
 $$\mathbf F = -\nabla f,$$
 
 pointing "downhill", toward smaller $f$. Read the constraint $g(x,y)=c$ as a
-**rigid wire** — the set of points you are allowed to occupy. Its gradient
-$\nabla g$ points *across* that wire, because a gradient is always perpendicular
-to its own level curve. Now thread a bead onto the wire. It feels the full pull
-$\mathbf F$, but it can only slide *along* the wire.
+**rigid wire**, the set of points you are allowed to occupy. Its gradient
+$\nabla g$ points across that wire, because a gradient is always perpendicular to
+its own level curve. Now thread a bead onto the wire. It feels the full pull
+$\mathbf F$, but it can only slide along the wire.
 
-Split the pull into two pieces — one **along** the wire, one **across** it:
-
-- The **across** piece is answered by the wire itself. A rigid wire responds to
-  any sideways push with an equal and opposite **reaction force**, and that
-  reaction can only point perpendicular to the wire — i.e. along $\nabla g$. Call
-  it $\mathbf N=\lambda\,\nabla g$, where the single number $\lambda$ says *how
-  hard* the wire pushes and its sign says *which way*.
-- The **along** piece is the only force free to move the bead. As long as it is
-  non-zero, the bead keeps sliding.
-
-So the bead comes to rest exactly when the along-wire force vanishes — when the
-entire pull is perpendicular to the wire, hence parallel to $\nabla g$:
+Split the pull into two pieces, one along the wire and one across it. The across
+piece is answered by the wire itself: a rigid wire responds to any sideways push
+with an equal and opposite **reaction force**, and that reaction can only point
+perpendicular to the wire, along $\nabla g$. Call it $\mathbf N=\lambda\,\nabla g$,
+where the single number $\lambda$ says how hard the wire pushes and its sign says
+which way. The along piece is the only force free to move the bead, so as long as
+it is non-zero the bead keeps sliding. The bead therefore comes to rest exactly
+when the along-wire force vanishes, when the entire pull is perpendicular to the
+wire and hence parallel to $\nabla g$:
 
 $$\underbrace{-\nabla f}_{\text{pull}}\;+\;\underbrace{\lambda\,\nabla g}_{\text{wire's reaction}}\;=\;\mathbf 0
 \qquad\Longleftrightarrow\qquad \boxed{\;\nabla f=\lambda\,\nabla g\;}.$$
 
-That is the Lagrange condition, and we did not do any algebra to get it — we
-balanced forces. The multiplier $\lambda$ was never bookkeeping; it is the
-**strength of the constraint's reaction force**.
+That is the Lagrange condition, and we reached it by balancing forces rather than
+by algebra. The multiplier $\lambda$ was never bookkeeping; it is the strength of
+the constraint's reaction force.
 
-## A worked example to keep in mind
+A concrete case makes it tangible. Take an especially transparent objective, a
+bowl that pulls everything toward a target point $\mathbf a=(2,1)$,
 
-Take the most transparent objective imaginable: a bowl that pulls everything
-toward a target point $a=(2,1)$,
+$$f(x,y)=(x-2)^2+(y-1)^2,\qquad -\nabla f = 2\,(\mathbf a-\mathbf x),$$
 
-$$f(x,y)=(x-2)^2+(y-1)^2,\qquad -\nabla f = 2\,(a-\mathbf x),$$
-
-so the pull points straight at $a$. Confine the bead to the **unit circle**
-$g(x,y)=x^2+y^2=1$, whose gradient $\nabla g=2\,(x,y)$ points radially outward.
-The answer is obvious to the eye — the point on the circle nearest $a$ — which is
-exactly why it's a good place to check the machinery. Solving
+so the pull points straight at $\mathbf a$. Confine the bead to the **unit
+circle** $g(x,y)=x^2+y^2=1$, whose gradient $\nabla g=2\,(x,y)$ points radially
+outward. The answer is obvious to the eye, the point on the circle nearest
+$\mathbf a$, which is why it is a good place to check the machinery. Solving
 $\nabla f=\lambda\nabla g$ together with $g=1$ gives
 
-$$\mathbf x^* = \frac{a}{\lVert a\rVert}\approx(0.894,\,0.447),
-\qquad \lambda^* = 1-\lVert a\rVert \approx -1.236.$$
+$$\mathbf x^* = \frac{\mathbf a}{\lVert\mathbf a\rVert}\approx(0.894,\,0.447),
+\qquad \lambda^* = 1-\lVert\mathbf a\rVert \approx -1.236.$$
 
-The multiplier is *negative*: the wire has to push **inward** to hold the bead
-against a pull that points outward toward $a$.
+The multiplier is negative: the wire has to push inward to hold the bead against a
+pull that points outward toward $\mathbf a$.
 
-## Watch the forces balance
-
-Release the bead and let it slide on the wire under the pull, with a little
-damping (imagine a bead in honey, so velocity is proportional to force). Three
-arrows are drawn at the bead:
-
-- <span style="color:#d62728;font-weight:bold">red</span> $=-\nabla f$, the full
-  pull of the objective;
-- <span style="color:#ff7f0e;font-weight:bold">orange</span>, its **along-wire**
-  part — the net force that actually moves the bead. *It shrinks to zero.*
-- <span style="color:#1f9fd8;font-weight:bold">blue</span> $=\lambda\nabla g$, the
-  wire's **reaction**, always perpendicular to the wire.
+Now release the bead and let it slide on the wire under the pull, with damping, so
+that its velocity is proportional to force (picture a bead sinking through honey).
+Three arrows are drawn at the bead. The
+<span style="color:#d62728;font-weight:bold">red</span> arrow is $-\nabla f$, the
+full pull of the objective. The
+<span style="color:#ff7f0e;font-weight:bold">orange</span> arrow is its along-wire
+part, the net force that actually moves the bead, and it shrinks to zero. The
+<span style="color:#1f9fd8;font-weight:bold">blue</span> arrow is $\lambda\nabla g$,
+the wire's reaction, always perpendicular to the wire.
 
 ![A bead sliding on a circular wire until the along-wire force vanishes](bead-on-wire.gif "As the bead settles, the orange along-wire force dies away; the red pull becomes purely radial and is exactly cancelled by the blue reaction. The read-out λ converges to −1.24.")
 
 When the bead stops, red and blue are equal and opposite, and the on-screen
 $\lambda$ has arrived at the $\lambda^*\approx-1.24$ we computed. Nothing was
-minimised by formula — a bead simply found the spot where the wire can absorb the
+minimised by formula; a bead simply found the spot where the wire can absorb the
 entire pull.
 
-**What is $\lambda$, really?** Bundle both potentials into one landscape, the
-*Lagrangian*
+It is worth pausing on $\lambda$. Bundle the objective and the constraint into a
+single landscape, the *Lagrangian*
 
 $$\mathcal L(x,y;\lambda)=f(x,y)-\lambda\,\big(g(x,y)-c\big),$$
 
 whose force is $-\nabla\mathcal L = -\nabla f + \lambda\nabla g$. Setting that to
-zero is precisely the balance above. So $\lambda$ is the **weight the constraint
-carries** in the combined potential: a larger $|\lambda|$ means a stiffer push is
-required to hold the bead in place.
+zero is precisely the balance above, so $\lambda$ is the weight the constraint
+carries in the combined potential: a larger $|\lambda|$ means a stiffer push is
+needed to hold the bead in place.
 
-## Soft constraints: a spring instead of a wire
-
-A rigid wire is an idealisation. It is often more natural — and it is what we
-actually do numerically — to make the constraint **soft**: replace the wire with
-a **spring** that pulls the bead toward the constraint surface, and charge an
-*energy penalty* for drifting off it. The total energy becomes
+A rigid wire is an idealisation. It is often more natural, and it is what we
+actually do numerically, to make the constraint soft: replace the wire with a
+spring that pulls the bead toward the constraint surface and charges an energy
+penalty for drifting off it. The total energy becomes
 
 $$E_\mu(x,y)=\underbrace{f(x,y)}_{\text{go downhill}}\;+\;\underbrace{\tfrac{\mu}{2}\big(g(x,y)-c\big)^2}_{\text{cost of leaving } g=c},$$
 
-two energies in direct competition: $f$ pulls the bead toward its own minimum,
-while the spring term pulls it back onto $g=c$. The stiffness $\mu$ sets how
-expensive a violation is. The bead now roams the whole plane and settles at the
-minimum of $E_\mu$, where the two forces cancel:
+two energies in direct competition. The objective $f$ pulls the bead toward its
+own minimum, while the spring term pulls it back onto $g=c$, and the stiffness
+$\mu$ sets how expensive a violation is. The bead now roams the whole plane and
+settles at the minimum of $E_\mu$, where the two forces cancel:
 
 $$\nabla f + \mu\,(g-c)\,\nabla g = 0
 \qquad\Longleftrightarrow\qquad
 \nabla f = \underbrace{-\mu\,(g-c)}_{=\;\lambda}\,\nabla g.$$
 
-Two things fall straight out:
+Two things fall straight out. First, the multiplier is the spring's tension: at
+the balance point the spring is stretched by $g-c$, and the restoring force it
+delivers, $-\mu(g-c)\nabla g$, plays exactly the role the wire's reaction
+$\lambda\nabla g$ did, so $\lambda=-\mu(g-c)$ is literally how hard the spring
+pulls. Second, a soft constraint is slightly violated: at finite stiffness the
+bead rests a little off the constraint, with $g-c\neq0$, which is the price of
+softness. As you stiffen the spring and let $\mu\to\infty$, the violation
+$g-c\to0$ while the product $\mu(g-c)$ stays finite and tends to $-\lambda^*$. The
+rigid wire is nothing but the infinitely stiff spring limit.
 
-- **The multiplier is the spring's tension.** At the balance point the spring is
-  stretched by $g-c$, and the restoring force it delivers, $-\mu(g-c)\nabla g$,
-  plays exactly the role the wire's reaction $\lambda\nabla g$ did. So
-  $\lambda=-\mu(g-c)$ — the multiplier is literally *how hard the spring pulls*.
-- **A soft constraint is slightly violated.** At finite stiffness the bead rests a
-  little *off* the constraint ($g-c\neq0$); that is the price of softness. As you
-  stiffen the spring, $\mu\to\infty$, the violation $g-c\to0$ (the bead returns to
-  the wire) while the product $\mu(g-c)$ stays finite and tends to $-\lambda^*$.
-  **The rigid wire is nothing but the infinitely-stiff-spring limit.**
+In the animation below we crank up the stiffness $\mu$. The bead starts at the
+unconstrained minimum of $f$ (the target $\mathbf a$, spring slack, constraint
+badly violated) and is reeled onto the constraint as the spring tightens; the
+effective multiplier $\lambda=-\mu(g-c)$ approaches $\lambda^*\approx-1.24$ while
+the violation shrinks to zero.
 
-Below we crank up the stiffness $\mu$. The bead starts at the *unconstrained*
-minimum of $f$ (the target $a$, spring slack, constraint badly violated) and is
-reeled onto the constraint as the spring tightens; the effective multiplier
-$\lambda=-\mu(g-c)$ grows to $\lambda^*\approx-1.24$ while the violation shrinks
-to zero.
+![Stiffening a spring reels the bead from the unconstrained optimum onto the constraint](spring-penalty.gif "Red downhill pull and blue spring force are equal and opposite at every stiffness; each frame is already a balance. As μ→∞ the violation g−c→0 and the spring tension −μ(g−c) becomes the multiplier λ.")
 
-![Stiffening a spring reels the bead from the unconstrained optimum onto the constraint](spring-penalty.gif "Red downhill pull and blue spring force are equal and opposite at every stiffness — each frame is already a balance. As μ→∞ the violation g−c→0 and the spring tension −μ(g−c) becomes the multiplier λ.")
+This is exactly the penalty method of constrained optimisation, and the seed of
+the augmented Lagrangian: trade a hard constraint for a stiff quadratic penalty,
+and recover the multiplier as the penalty's tension in the stiff spring limit.
+Hard wire and soft spring are two views of the same balance.
 
-This is exactly the **penalty method** of constrained optimisation, and the seed
-of the **augmented Lagrangian**: trade a hard constraint for a stiff quadratic
-penalty, and recover the multiplier as the penalty's tension in the stiff-spring
-limit. Hard wire and soft spring are two views of the same balance.
+So far the objective has been convex, and then the balanced minimum is unique.
+Real objectives are bumpy, and the same condition $\nabla f=\lambda\nabla g$ then
+holds at several points on the wire: every valley bottom, a stable rest point, and
+every ridge top, an unstable one, each with its own $\lambda$. (Even the convex
+bowl already has two balance points on the circle, a near minimum and a far
+maximum; what is unique for a convex objective is the minimum, not the balance.)
+Nothing about the force picture breaks; it simply has more than one solution. The
+mechanics also makes visible something you already know about gradient methods: a
+force or gradient flow settles into whichever local minimum's basin it starts in.
+That is no more a flaw here than it is for ordinary gradient descent; it is simply
+how local methods behave.
 
-## Bumpy landscapes: many balance points
+In the animation, eight beads are released on a landscape of several wells. Green
+dots mark stable minima, red crosses mark unstable maxima, and all of them satisfy
+$\nabla f=\lambda\nabla g$. The beads split by basin, and some settle in shallower
+minima rather than the deepest valley (the ringed global optimum), just as local
+descent should behave. The forces are drawn as before: each bead carries its net
+along-wire force in orange, which shrinks to zero as the bead settles, and the
+white-ringed bead, the one heading for the deepest valley, also shows its full
+pull $-\nabla f$ in red and the wire's reaction $\lambda\nabla g$ in blue, which
+come into balance when it stops.
 
-For **convex** $f$ the balanced point is unique. When $f$ is bumpy the same
-condition $\nabla f=\lambda\nabla g$ simply holds at **several** points on the
-wire — every valley bottom (a *stable* rest point) *and* every ridge top (an
-*unstable* one), each with its own $\lambda$. Nothing about the force picture
-breaks; it just has more than one solution. And the mechanics makes visible
-something you already know about gradient methods: **a force/gradient flow settles
-into whichever local minimum it starts nearest.** That is not a flaw here any more
-than it is for ordinary gradient descent — it is simply how local methods behave.
+![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too; they are just unstable.")
 
-Below, eight beads are released on a landscape of several wells. Green dots mark
-stable minima, red crosses mark unstable maxima — **all** of them satisfy
-$\nabla f=\lambda\nabla g$. The beads split by basin; some settle in shallower
-minima rather than the deepest valley (the ringed global optimum), exactly as you
-would expect from local descent. The forces are drawn just as before: each bead
-carries its **net along-wire force** in orange (it shrinks to zero as the bead
-settles), and the white-ringed bead — the one heading for the deepest valley —
-also shows its full pull $-\nabla f$ in red and the wire's reaction
-$\lambda\nabla g$ in blue, which come into balance when it stops.
+The one distinction worth keeping straight is that force balance is stationarity,
+not optimality: maxima balance forces as well, they are merely unstable. Selecting
+the global constrained optimum is then the usual separate job, whether by multiple
+starts as here, by annealing, or by a global method, precisely as it is for
+unconstrained gradient descent.
 
-![Eight beads released on a bumpy landscape, settling into different basins](bumpy-swarm.gif "Every green dot and red cross is a force-balance point. Watch the orange along-wire forces die out as the beads settle; on the ringed bead, red pull and blue reaction end up equal and opposite. Maxima balance forces too — they are just unstable.")
-
-The one distinction worth keeping straight is that force balance is
-**stationarity**, not optimality: maxima balance forces as well, they are merely
-unstable. Selecting the *global* constrained optimum is then the usual separate
-job — multiple starts (as here), annealing, or a global method — precisely as it
-is for unconstrained gradient descent.
-
-## The whole idea, on one page
+Here is the whole idea on one page:
 
 | idea | in words | in symbols |
 |---|---|---|
 | objective = potential | it pulls the bead downhill | $\mathbf F=-\nabla f$ |
 | constraint = wire | motion is confined to $g=c$; the wire pushes only sideways | $\mathbf N=\lambda\nabla g$ |
-| equilibrium | rest when no force acts *along* the wire | $-\nabla f+\lambda\nabla g=\mathbf 0$ |
+| equilibrium | rest when no force acts along the wire | $-\nabla f+\lambda\nabla g=\mathbf 0$ |
 | the multiplier | strength (and sign) of the wire's reaction | $\lambda$ |
 | tangency | at rest, a contour of $f$ just kisses the wire | $\nabla f\parallel\nabla g$ |
 
-**In one sentence:** minimising $f$ on $g=c$ is letting a bead slide on a wire
-until the objective's pull is entirely absorbed by the wire's reaction — the
-condition $\nabla f=\lambda\nabla g$ *is* that force balance, and $\lambda$ is how
-hard the wire pushes. For convex $f$ the balanced point is the answer; for bumpy
-$f$ there are many, and local sliding finds only one.
+In one sentence, minimising $f$ on $g=c$ is letting a bead slide on a wire until
+the objective's pull is entirely absorbed by the wire's reaction: the condition
+$\nabla f=\lambda\nabla g$ is that force balance, and $\lambda$ is how hard the
+wire pushes. For convex $f$ the balanced minimum is the answer; for bumpy $f$
+there are several, and local sliding finds one of them.
