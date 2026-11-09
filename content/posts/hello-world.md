@@ -1,5 +1,6 @@
 ---
 title: "Hello World - Welcome to My Blog!"
+description: "Welcome to Hashed Science, Syed Hashim Shah's blog on physics, computation, quantitative ML and AI."
 date: 2026-03-12T15:23:52+09:00
 draft: false
 tags: ["introduction", "first-post"]

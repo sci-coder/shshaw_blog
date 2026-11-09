@@ -4,15 +4,33 @@ defaultContentLanguage: en
 title: Hashed Science
 theme: PaperMod  # Stable theme that works with all Hugo versions
 
-# Disable RSS to fix the error
-disableKinds:
-  - RSS
-  - sitemap
+# SEO: sitemap.xml, robots.txt and RSS help search engines find and re-crawl pages.
+enableRobotsTXT: true
+sitemap:
+  changeFreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
 
 params:
-  # Site description
-  description: "Welcome to Hashed Science - Blogs about Physics, Computation, AI, Evolution and Simulation"
+  # SEO + social previews. CI builds in production mode, so PaperMod emits Open Graph,
+  # Twitter-card and schema.org JSON-LD tags; `env` makes local builds do the same.
+  env: production
+  description: "Hashed Science by Syed Hashim Shah: picture-first articles on quantitative ML, generative AI for finance, physics-based machine learning and optimization."
+  keywords: ["quantitative finance", "machine learning", "generative AI", "physics-based machine learning", "optimization", "statistical physics", "risk management", "Syed Hashim Shah"]
   author: "Syed Hashim Shah"
+  images: ["images/og-default.png"]   # default share image (1200x630) for pages without a cover
+  schema:
+    publisherType: "Person"
+    sameAs:
+      - "https://github.com/sci-coder"
+      - "https://www.linkedin.com/in/syed-hashim-shah/"
+  # Paste the codes from Google Search Console / Bing Webmaster Tools here to verify the site.
+  analytics:
+    google:
+      SiteVerificationTag: "m5RbBCpBFqWSujkVNnM3wtAJJGzg7juH-tDSv6NxUYk"
+    bing:
+      SiteVerificationTag: ""
+  ShowRssButtonInSectionTermList: true
 
   # Default to dark mode (visitors can still toggle; choice is remembered)
   defaultTheme: dark
@@ -27,8 +45,8 @@ params:
   # Home page configuration
   profileMode:
     enabled: true
-    title: "Blogs about Physics, Computation, AI, Evolution and Simulation"
-    subtitle: "Welcome to my personal blog where I share my thoughts and ideas"
+    title: "Physics, Machine Learning and Quantitative Finance"
+    subtitle: "Picture-first notes and explainers by Syed Hashim Shah"
     imageUrl: "" # You can add a profile image URL later
     imageTitle: "Profile Picture"
     buttons:
@@ -72,10 +90,11 @@ menu:
     #   params:
     #     external: true
 
-# Enable search (without RSS)
+# Search index (JSON) + RSS feed (index.xml)
 outputs:
   home:
     - HTML
+    - RSS
     - JSON
 
 # Allow raw HTML in markdown files (needed for animations)

@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "About Syed Hashim Shah: quantitative ML and generative AI researcher for finance and risk management, with a background in computational biophysics."
 date: 2026-07-29
 ---
 
