@@ -2,7 +2,7 @@
 
 **Quantitative ML & Generative AI Researcher for Finance & Risk Management**
 
-📧 [syed.hashim.shahh@gmail.com](mailto:syed.hashim.shahh@gmail.com) · 🔗 [linkedin.com/in/syed-hashim-shah](https://www.linkedin.com/in/syed-hashim-shah/) · 📍 Tokyo, Japan
+📧 [Email](mailto:syed.hashim.shahh@gmail.com) · 🔗 [LinkedIn](https://www.linkedin.com/in/syed-hashim-shah/) · 💻 [GitHub](https://github.com/sci-coder) · 🌐 [Website](https://sci-coder.github.io/shshaw_blog/) · 📍 Tokyo, Japan
 
 ## Work Experience
 
@@ -16,7 +16,7 @@
 - Apply **optimization and Monte Carlo stochastic modelling** (convex optimization, portfolio and parameter optimization) to improve model accuracy and robustness.
 - Build reproducible **data-analytics and feature-engineering pipelines** over large, noisy datasets.
 
-### Engineer and Researcher — GIKI, Faculty of Materials & Chemical Engineering · Topi, Pakistan
+### Engineer and Researcher — [GIKI](https://giki.edu.pk/), Faculty of Materials & Chemical Engineering · Topi, Pakistan
 *Research & Teaching · Sep 2016 – Mar 2018*
 
 - Established a new **Electrochemistry and Nanotechnology laboratory** and designed its undergraduate experiments from the ground up.

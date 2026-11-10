@@ -31,6 +31,9 @@ params:
     bing:
       SiteVerificationTag: ""
   ShowRssButtonInSectionTermList: true
+  # Use the original cover file; resized copies of animated GIFs are many MB
+  cover:
+    responsiveImages: false
 
   # Default to dark mode (visitors can still toggle; choice is remembered)
   defaultTheme: dark
@@ -42,18 +45,17 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
 
-  # Home page configuration
-  profileMode:
-    enabled: true
-    title: "Physics, Machine Learning and Quantitative Finance"
-    subtitle: "Picture-first notes and explainers by Syed Hashim Shah"
-    imageUrl: "" # You can add a profile image URL later
-    imageTitle: "Profile Picture"
-    buttons:
-      - name: Posts
-        url: posts
-      - name: GitHub
-        url: "https://github.com/sci-coder"
+  # Home page: short intro, then the article list (posts section only)
+  mainSections: ["posts"]
+  homeInfoParams:
+    Title: "Physics, Machine Learning and Quantitative Finance"
+    Content: >-
+      I'm Syed Hashim Shah, a quantitative ML and generative-AI researcher in Tokyo with a
+      background in computational biophysics. Here I write picture-first articles on
+      quantitative finance, ML research, physics-based ML and optimization.
+
+  footer:
+    text: "[Essays](/shshaw_blog/essays/) · [Fun](/shshaw_blog/fun/)"
 
   # Social Icons (update with your links)
   socialIcons:
@@ -67,17 +69,13 @@ params:
 menu:
   main:
     - identifier: posts
-      name: Posts
+      name: Articles
       url: /posts/
       weight: 10
     - identifier: about
       name: About
       url: /about/
       weight: 20
-    - identifier: fun
-      name: Fun
-      url: /fun/
-      weight: 27
     - identifier: search
       name: Search
       url: /search/

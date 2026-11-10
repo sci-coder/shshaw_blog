@@ -1,5 +1,7 @@
 ---
 title: "Deep Work, Productivity, and Finding Balance in a Distracted World"
+aliases:
+  - /posts/deep-work-personal-reflections-on-academic-productivity/
 date: 2018-10-03
 tags: ["productivity", "growth", "motivation"]
 categories: ["Productivity"]

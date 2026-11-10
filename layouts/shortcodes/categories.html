@@ -1,0 +1,10 @@
+{{- /* Category chips for one section, with article counts. Usage: {{< categories section="posts" >}} */ -}}
+{{- $section := .Get "section" | default "posts" -}}
+<span class="cat-chips">
+{{- range $name, $tax := site.Taxonomies.categories }}
+  {{- $pages := where $tax.Pages "Section" $section }}
+  {{- if $pages }}
+  <a class="cat-chip" href="{{ $tax.Page.RelPermalink }}">{{ $tax.Page.Title }} <span>{{ len $pages }}</span></a>
+  {{- end }}
+{{- end }}
+</span>

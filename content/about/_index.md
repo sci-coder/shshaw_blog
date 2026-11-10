@@ -1,10 +1,17 @@
 ---
 title: "About"
+aliases:
+  - /posts/hello-world/
 description: "About Syed Hashim Shah: quantitative ML and generative AI researcher for finance and risk management, with a background in computational biophysics."
 date: 2026-07-29
 ---
 
 ## Hi, I'm Syed Hashim Shah (Hashim)
+
+<div class="cv-buttons">
+  <a class="cv-btn" href="/shshaw_blog/cv/Syed_Hashim_Shah_CV.pdf" download>Download CV (PDF)</a>
+  <a class="cv-btn ghost" href="/shshaw_blog/about/cv/">Read CV online</a>
+</div>
 
 I'm a **Quantitative ML & Generative AI researcher** working on problems in finance and risk management, based in **Tokyo, Japan**. Day to day I build generative and probabilistic models for markets — synthetic scenario generation, time-series modelling, anomaly detection, and Bayesian methods — and turn them into reproducible, production Python. I was lead author of [JPX Working Paper Vol. 48](https://www.jpx.co.jp/corporate/research-study/working-paper/JPXWP_Vol48.pdf), *Hypothetical Market Data Scenario Generation Using Generative AI*, for the Japan Exchange Group.
 
@@ -22,6 +29,6 @@ This is where I write about the things I find beautiful across **physics, comput
 
 ## Get in touch
 
-- **Email:** [syed.hashim.shahh@gmail.com](mailto:syed.hashim.shahh@gmail.com)
-- **LinkedIn:** [linkedin.com/in/syed-hashim-shah](https://www.linkedin.com/in/syed-hashim-shah/)
-- **GitHub:** [github.com/sci-coder](https://github.com/sci-coder)
+- 📧 [Email me](mailto:syed.hashim.shahh@gmail.com)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/syed-hashim-shah/)
+- 💻 [GitHub](https://github.com/sci-coder)

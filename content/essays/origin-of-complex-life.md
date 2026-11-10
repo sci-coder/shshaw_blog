@@ -1,6 +1,8 @@
 
 ---
 title: "Life, Intelligence, and the Algorithm of Free Energy"
+aliases:
+  - /posts/origin-of-complex-life/
 date: 2026-03-12T15:45:00+09:00
 draft: false
 tags: ["philosophy", "science", "thermodynamics", "evolution", "complex-systems", "artificial-intelligence"]
