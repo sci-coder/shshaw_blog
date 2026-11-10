@@ -1,43 +1,5 @@
-{{- /* Reading progress bar + click-to-enlarge figures (articles only) + optional GoatCounter. */ -}}
-{{- if and .IsPage (eq .Section "posts") }}
-<div id="read-progress" aria-hidden="true"></div>
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden></div>
-<script>
-(function () {
-  var bar = document.getElementById('read-progress');
-  var art = document.querySelector('.post-content');
-  function upd() {
-    if (!art) return;
-    var r = art.getBoundingClientRect(), h = art.offsetHeight - window.innerHeight;
-    var p = h > 0 ? Math.min(1, Math.max(0, -r.top / h)) : 1;
-    bar.style.transform = 'scaleX(' + p + ')';
-  }
-  window.addEventListener('scroll', upd, {passive: true}); window.addEventListener('resize', upd); upd();
+{{- /* Site-wide footer additions (cached per page kind by PaperMod): optional GoatCounter. */ -}}
 
-  var box = document.getElementById('lightbox');
-  function close() { box.hidden = true; box.innerHTML = ''; document.body.style.overflow = ''; }
-  document.querySelectorAll('.post-content figure img, .post-content figure video').forEach(function (el) {
-    el.classList.add('zoomable');
-    el.setAttribute('title', 'Click to enlarge');
-    el.addEventListener('click', function () {
-      var c = el.cloneNode(true);
-      if (c.tagName === 'VIDEO') { c.muted = true; c.autoplay = true; c.loop = true; c.setAttribute('playsinline', ''); }
-      c.removeAttribute('style'); c.removeAttribute('title');
-      var hint = document.createElement('div'); hint.className = 'lightbox-hint'; hint.textContent = 'Tap anywhere or press Esc to close';
-      box.innerHTML = ''; box.appendChild(c); box.appendChild(hint); box.hidden = false;
-      document.body.style.overflow = 'hidden';
-      if (c.tagName === 'VIDEO') { c.play && c.play(); }
-    });
-  });
-  box.addEventListener('click', close);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
-
-  /* On wide screens keep the table of contents open in the side margin */
-  var toc = document.querySelector('.toc details');
-  if (toc && window.matchMedia('(min-width: 1500px)').matches) toc.open = true;
-})();
-</script>
-{{- end }}
 {{- if hugo.IsProduction }}{{ with site.Params.goatcounter }}
 <script data-goatcounter="https://{{ . }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {{- end }}{{ end }}
