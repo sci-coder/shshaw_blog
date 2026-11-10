@@ -191,3 +191,37 @@
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
     background: #fff;
 }
+
+/* ---------- Desktop reading: wider column, larger type, wide figures ---------- */
+@media (min-width: 1200px) {
+    :root {
+        --main-width: 860px;
+        --nav-width: 1180px;
+    }
+    .post-content { font-size: 18px; line-height: 1.8; }
+    .entry-content { font-size: 16px; }
+    .post-entry:has(.entry-cover) { grid-template-columns: 240px 1fr; }
+    /* figures break out of the text column so animations read well */
+    .post-content figure {
+        width: min(1120px, calc(100vw - 96px));
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .post-content figure img,
+    .post-content figure video { width: 100%; }
+    .post-content figure figcaption {
+        max-width: var(--main-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1600px) {
+    :root {
+        --main-width: 960px;
+        --nav-width: 1320px;
+    }
+    .post-content { font-size: 19px; }
+    .post-content figure { width: min(1240px, calc(100vw - 120px)); }
+}
