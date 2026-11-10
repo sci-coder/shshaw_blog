@@ -11,4 +11,6 @@ menu:
     weight: 15
 ---
 
-## Coming soon
+Each card links to a short write-up with animations. The code is available on request.
+
+{{< project-cards >}}

@@ -1,0 +1,12 @@
+{{- /* About is a section (it holds the CV page). Render it as a plain page: no child list, no RSS icon. */ -}}
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  <div class="post-content">
+    {{- .Content }}
+  </div>
+</article>
+{{- end }}

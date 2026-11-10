@@ -1,0 +1,8 @@
+# Project cards for the Projects page (newest first). One entry per published project article.
+# Example:
+#   - title: "Closing Hormuz: a network model meets the 2026 oil shock"
+#     pitch: "A shock-spread network tested out of sample on the 2026 oil shock."
+#     url: "posts/hormuz-network-oil-shock/"
+#     image: "posts/hormuz-network-oil-shock/cover.gif"
+#     tags: ["quant finance", "networks"]
+projects: []

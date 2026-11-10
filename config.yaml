@@ -31,12 +31,14 @@ params:
     bing:
       SiteVerificationTag: ""
   ShowRssButtonInSectionTermList: true
+  # Privacy-friendly visitor counts: put your GoatCounter code here (e.g. "shshaw" for shshaw.goatcounter.com)
+  goatcounter: ""
   # Use the original cover file; resized copies of animated GIFs are many MB
   cover:
     responsiveImages: false
 
   # Default to dark mode (visitors can still toggle; choice is remembered)
-  defaultTheme: dark
+  defaultTheme: auto   # follow the visitor's system light/dark setting
 
   # Show reading time
   ShowReadingTime: true
@@ -110,3 +112,21 @@ markup:
           block:
             - ["$$", "$$"]
             - ["\\[", "\\]"]
+# Taxonomies, including article series ("Part 1, Part 2, ...")
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+# "You may also like": rank other articles by shared series, categories and tags
+related:
+  includeNewer: true
+  threshold: 20
+  toLower: true
+  indices:
+    - name: series
+      weight: 100
+    - name: categories
+      weight: 60
+    - name: tags
+      weight: 40

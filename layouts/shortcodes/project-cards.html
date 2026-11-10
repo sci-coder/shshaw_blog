@@ -1,0 +1,18 @@
+{{- /* Card grid from data/projects.yaml. Usage: {{< project-cards >}} */ -}}
+{{- $items := site.Data.projects.projects | default slice }}
+{{- if $items }}
+<div class="project-grid">
+  {{- range $items }}
+  <a class="project-card" href="{{ .url | relURL }}">
+    {{- with .image }}<img src="{{ . | relURL }}" alt="" loading="lazy">{{ end }}
+    <div class="project-body">
+      <div class="project-title">{{ .title }}</div>
+      <div class="project-pitch">{{ .pitch }}</div>
+      {{- with .tags }}<div class="project-tags">{{ range . }}<span>{{ . }}</span>{{ end }}</div>{{ end }}
+    </div>
+  </a>
+  {{- end }}
+</div>
+{{- else }}
+<p>Write-ups of my projects are on the way. Meanwhile, see the <a href="{{ "posts/" | relURL }}">articles</a>.</p>
+{{- end }}

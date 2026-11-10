@@ -1,0 +1,22 @@
+{{- /* Series list (if the post has `series`) and up to 3 related articles. */ -}}
+{{- range .GetTerms "series" }}
+<nav class="series-box" aria-label="Series">
+  <div class="box-title">Series · <a href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
+  <ol>
+    {{- range .Pages.ByDate }}
+    <li>{{ if eq .Permalink $.Permalink }}<strong>{{ .Title }}</strong> <span class="muted">(you are here)</span>{{ else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end }}</li>
+    {{- end }}
+  </ol>
+</nav>
+{{- end }}
+{{- $related := where (site.RegularPages.Related .) "Section" "posts" | first 3 }}
+{{- with $related }}
+<nav class="related-box" aria-label="Related articles">
+  <div class="box-title">You may also like</div>
+  <ul>
+    {{- range . }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a><span class="muted">{{ .Summary | plainify | truncate 120 }}</span></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}
