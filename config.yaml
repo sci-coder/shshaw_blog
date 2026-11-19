@@ -43,6 +43,7 @@ params:
   # Show reading time
   ShowReadingTime: true
   ShowShareButtons: true
+  ShareButtons: ["linkedin"]   # share row under each article: LinkedIn only
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
